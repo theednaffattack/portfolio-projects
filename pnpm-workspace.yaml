@@ -1,0 +1,3 @@
+packages:
+  - collaborator-front
+  - packages/*

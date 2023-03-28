@@ -37,6 +37,14 @@ header h1 {
   margin: 20px 0 0 0;
 }
 
+/* BEGIN */
+.edit-document {
+  min-height: 450px;
+  /* outline: 2px dashed limegreen; */
+  background-color: #fff;
+}
+/* END  */
+
 .editor-shell {
   margin: 20px auto;
   border-radius: 2px;

@@ -6,6 +6,14 @@
 
 [pnpm Workspace Example](https://github.com/ashleydavis/pnpm-workspace-examples)
 
+Brilliant package to handle YJS server: https://socket.dev/npm/package/yjs-server/files/0.2.3/src/create-yjs-server.ts
+
+[y-websocket README.md](https://github.com/yjs/y-websocket/blob/master/README.md)
+
+[yjs-server](https://socket.dev/npm/package/yjs-server)
+
+[YJS bug fix when using Vite bundler](https://github.com/facebook/lexical/issues/2153#issuecomment-1145621049)
+
 ## Project Ideas
 
 1. **A Real-Time Game App**

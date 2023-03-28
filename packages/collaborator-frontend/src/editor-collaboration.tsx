@@ -1,13 +1,16 @@
-import { $getRoot, $createParagraphNode, $createTextNode } from "lexical";
+import { CollaborationPlugin } from "@lexical/react/LexicalCollaborationPlugin";
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
-import { PlainTextPlugin } from "@lexical/react/LexicalPlainTextPlugin";
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
-import { CollaborationPlugin } from "@lexical/react/LexicalCollaborationPlugin";
+import { Provider } from "@lexical/yjs";
 import type { LexicalEditor } from "lexical";
-import * as Y from "yjs";
+import { $createParagraphNode, $createTextNode, $getRoot } from "lexical";
 import { WebsocketProvider } from "y-websocket";
+import * as Y from "yjs";
+
+import { createWebsocketProvider } from "./collaboration";
+import ToolbarPlugin from "./plugins/toolbar-plugin";
 
 function initialEditorState(editor: LexicalEditor): void {
   const root = $getRoot();
@@ -33,30 +36,24 @@ export function EditorCollab() {
 
   return (
     <LexicalComposer initialConfig={initialConfig}>
-      {/* <PlainTextPlugin
-        contentEditable={<ContentEditable />}
-        placeholder={<div>Enter some text...</div>}
-        ErrorBoundary={LexicalErrorBoundary}
-      /> */}
+      <ToolbarPlugin />
       <RichTextPlugin
-        contentEditable={<ContentEditable />}
+        contentEditable={<ContentEditable className="edit-document" />}
         placeholder={<div>Enter RICH some text...</div>}
         ErrorBoundary={LexicalErrorBoundary}
       />
       <CollaborationPlugin
-        id="yjs-plugin"
+        id="playground"
         providerFactory={(id, yjsDocMap) => {
           const doc = new Y.Doc();
           yjsDocMap.set(id, doc);
 
-          const provider = new WebsocketProvider(
-            "ws://localhost:1234",
-            id,
-            doc
-          );
+          const provider = createWebsocketProvider(id, yjsDocMap);
 
           return provider;
         }}
+        cursorColor="pink"
+        username="boa constrictor"
         // Optional initial editor state in case collaborative Y.Doc won't
         // have any existing data on server. Then it'll user this value to populate editor.
         // It accepts same type of values as LexicalComposer editorState

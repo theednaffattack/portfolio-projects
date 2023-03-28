@@ -108,6 +108,9 @@ function generateHTMLFromJSON(
   if (html === undefined) {
     html = editorState.read(() => $generateHtmlFromNodes(cellEditor, null));
     const textContent = editorState.read(() => $getRoot().getTextContent());
+    if (!html) {
+      throw new Error("Variable 'html' is undefined!");
+    }
     cellHTMLCache.set(editorStateJSON, html);
     cellTextContentCache.set(editorStateJSON, textContent);
   }

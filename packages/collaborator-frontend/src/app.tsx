@@ -1,4 +1,5 @@
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
+import { LexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 
 import { SettingsContext } from "./context/SettingsContext";
 import { SharedHistoryContext } from "./context/SharedHistoryContext";

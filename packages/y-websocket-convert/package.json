@@ -1,0 +1,27 @@
+{
+  "name": "y-websocket-convert",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lib0": "^0.2.73",
+    "lodash.debounce": "^4.0.8",
+    "ws": "^8.13.0",
+    "y-leveldb": "^0.1.2",
+    "y-protocols": "^1.0.5",
+    "yjs": "^13.5.51",
+    "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "@types/lodash.debounce": "^4.0.7",
+    "@types/node": "^18.15.10",
+    "@types/ws": "^8.5.4",
+    "typescript": "^5.0.2"
+  }
+}

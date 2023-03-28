@@ -13,7 +13,7 @@ import type {
   RangeSelection,
 } from "lexical";
 
-import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
+import { useLexicalComposerContext } from "@lexical/react/LexicalReactComposerContext";
 import { $createParagraphNode, $createTextNode, $getRoot } from "lexical";
 import * as React from "react";
 import { useCallback, useEffect, useRef, useState } from "react";

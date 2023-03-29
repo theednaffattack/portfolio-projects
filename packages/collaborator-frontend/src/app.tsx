@@ -28,8 +28,9 @@ function App() {
     <LexicalComposer initialConfig={initialConfig}>
       <SharedHistoryContext>
         <SettingsContext>
-          <EditorCollab />
-          {/* <Editor /> */}
+          <div className="editor-shell">
+            <EditorCollab />
+          </div>
           <Settings />
         </SettingsContext>
       </SharedHistoryContext>

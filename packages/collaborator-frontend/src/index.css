@@ -41,7 +41,7 @@ header h1 {
 .edit-document {
   min-height: 450px;
   /* outline: 2px dashed limegreen; */
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 /* END  */
 
@@ -63,6 +63,8 @@ header h1 {
   background: #fff;
   position: relative;
   display: block;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
@@ -1377,6 +1379,7 @@ button.action-button:disabled {
   padding: 4px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  border-bottom: 1px #eee solid;
   vertical-align: middle;
   overflow: auto;
   height: 36px;

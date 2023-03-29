@@ -42,6 +42,8 @@ interface PlaygroundEmbedConfig extends EmbedConfig {
 
   // Embed a Figma Project.
   description?: string;
+
+  // type: string;
 }
 
 export const YoutubeEmbedConfig: PlaygroundEmbedConfig = {

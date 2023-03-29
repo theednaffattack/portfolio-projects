@@ -81,6 +81,7 @@ import {
 } from "./images-plugin";
 import { InsertPollDialog } from "./poll-plugin";
 import { InsertNewTableDialog, InsertTableDialog } from "./table-plugin";
+import ActionsPlugin from "./actions-plugin";
 
 const blockTypeToBlockName = {
   bullet: "Bulleted List",
@@ -1028,6 +1029,20 @@ export default function ToolbarPlugin(): JSX.Element {
           <span className="text">Indent</span>
         </DropDownItem>
       </DropDown>
+
+      {/* <button
+        className="action-button clear"
+        disabled={isEditorEmpty}
+        onClick={() => {
+          showModal("Clear editor", (onClose) => (
+            <ShowClearDialog editor={editor} onClose={onClose} />
+          ));
+        }}
+        title="Clear"
+        aria-label="Clear editor contents"
+      >
+        <i className="clear" />
+      </button> */}
 
       {modal}
     </div>

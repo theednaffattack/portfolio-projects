@@ -20,6 +20,7 @@ import FloatingLinkEditorPlugin from "./plugins/FloatingLinkEditorPlugin";
 import FloatingTextFormatToolbarPlugin from "./plugins/FloatingTextFormatToolbarPlugin";
 import TableCellActionMenuPlugin from "./plugins/TableActionMenuPlugin";
 import ToolbarPlugin from "./plugins/toolbar-plugin";
+import YouTubePlugin from "./plugins/you-tube-plugin";
 
 function initialEditorState(editor: LexicalEditor): void {
   const root = $getRoot();
@@ -92,6 +93,7 @@ export function EditorCollab() {
         <AutoFocusPlugin />
         <ClearEditorPlugin />
         <ActionsPlugin isRichText={true} />
+        <YouTubePlugin />
         {floatingAnchorElem && !isSmallWidthViewport ? (
           <>
             <DraggableBlockPlugin anchorElem={floatingAnchorElem} />

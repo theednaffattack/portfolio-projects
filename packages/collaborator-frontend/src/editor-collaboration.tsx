@@ -18,6 +18,7 @@ import DragDropPaste from "./plugins/DragDropPastePlugin";
 import DraggableBlockPlugin from "./plugins/DraggableBlockPlugin";
 import FloatingLinkEditorPlugin from "./plugins/FloatingLinkEditorPlugin";
 import FloatingTextFormatToolbarPlugin from "./plugins/FloatingTextFormatToolbarPlugin";
+import LinkPlugin from "./plugins/link-plugin";
 import PollPlugin from "./plugins/poll-plugin";
 import TableCellActionMenuPlugin from "./plugins/TableActionMenuPlugin";
 import ToolbarPlugin from "./plugins/toolbar-plugin";
@@ -94,6 +95,7 @@ export function EditorCollab() {
         <AutoFocusPlugin />
         <ClearEditorPlugin />
         <ActionsPlugin isRichText={true} />
+        <LinkPlugin />
         <PollPlugin />
         <YouTubePlugin />
         {floatingAnchorElem && !isSmallWidthViewport ? (

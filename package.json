@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "serve": "pnpm --stream -r serve",
-    "start:dev": "pnpm --parallel --stream -r run start:dev",
+    "serve:dev": "pnpm --stream -r run serve:dev",
     "build": "pnpm --stream -r run build",
     "clean": "rm -rf .parcel-cache && pnpm -r run clean"
   },

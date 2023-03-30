@@ -6,7 +6,7 @@
   "scripts": {
     "build": "rimraf ./dist && tsx ./scripts/build.ts",
     "typecheck": "tsc --noEmit",
-    "serve-dev": "tsx watch src/server.ts",
+    "serve:dev": "tsx watch src/server.ts",
     "dev-server": "node ./dist/index.esm.mjs",
     "dev": "pnpm build --watch",
     "validate": "run-p lint typecheck test:run format:check build",

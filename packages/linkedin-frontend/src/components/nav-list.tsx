@@ -4,7 +4,7 @@ import "./nav-list.css";
 
 export function NavList() {
   return (
-    <ul>
+    <ul className="top-nav">
       <li>
         <a href="#">
           <Icon icon="ph:compass-duotone" fontSize="30px" />
@@ -27,16 +27,6 @@ export function NavList() {
         <a href="#">
           <Icon icon="ph:briefcase-duotone" fontSize="30px" />
           <span className="link-text-sm">Jobs</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" className="button-like">
-          Join now
-        </a>
-      </li>
-      <li>
-        <a href="#" className="button-like button-like-outline">
-          Sign in
         </a>
       </li>
     </ul>

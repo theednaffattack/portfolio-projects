@@ -12,6 +12,13 @@ export function HomeUnauthenticated() {
             </a>
           </div>
           <NavList />
+
+          <a href="#" className="button-like">
+            Join now
+          </a>
+          <a href="#" className="button-like button-like-outline">
+            Sign in
+          </a>
         </div>
       </nav>
       <section>Two</section>

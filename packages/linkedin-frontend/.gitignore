@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Hide auto generated config file
+vite.config.ts.timestamp-*.mjs

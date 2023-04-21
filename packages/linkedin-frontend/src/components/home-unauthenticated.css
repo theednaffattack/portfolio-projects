@@ -1,0 +1,28 @@
+.grid-container {
+  display: grid;
+  outline: 2px limegreen dashed;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+#logo-container {
+  margin-right: auto;
+}
+
+#logo-container a {
+  text-decoration: none;
+}
+
+.logo-link {
+  color: #0a66c2;
+}
+
+.wrap {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1128px;
+}

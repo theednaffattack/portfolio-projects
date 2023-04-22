@@ -1,5 +1,6 @@
 import "./home-unauthenticated.css";
 import { NavList } from "./nav-list";
+import { SignInForm } from "./sign-in-form";
 
 export function HomeUnauthenticated() {
   return (
@@ -21,7 +22,9 @@ export function HomeUnauthenticated() {
           </a>
         </div>
       </nav>
-      <section>Two</section>
+      <section>
+        <SignInForm />
+      </section>
       <section>Three</section>
       <section>Four</section>
       <section>Five</section>

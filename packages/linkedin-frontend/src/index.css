@@ -71,6 +71,10 @@ h6 {
 }
 /* END CSS RESET */
 
+body {
+  display: grid;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: var(--light-theme-text);

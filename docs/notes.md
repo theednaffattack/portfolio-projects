@@ -14,6 +14,8 @@ Brilliant package to handle YJS server: https://socket.dev/npm/package/yjs-serve
 
 [YJS bug fix when using Vite bundler](https://github.com/facebook/lexical/issues/2153#issuecomment-1145621049)
 
+[Zod for Env vars](https://dev.to/jfranciscosousa/validating-environment-variables-with-zod-14am)
+
 ## Project Ideas
 
 1. **A Real-Time Game App**

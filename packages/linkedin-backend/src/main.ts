@@ -10,10 +10,7 @@ import helmet from "@fastify/helmet";
 import compress from "@fastify/compress";
 import rateLimit from "@fastify/rate-limit";
 import healthCheck from "fastify-healthcheck";
-import fastifyApollo, {
-  fastifyApolloDrainPlugin,
-} from "@as-integrations/fastify";
-import { ApolloServer } from "@apollo/server";
+
 import { logger } from "./logger";
 import { context, formatError } from "./helpers";
 import { config } from "./config";
@@ -26,6 +23,11 @@ import { Context } from "./types";
 // Set timezone to UTC
 process.env.TZ = "Etc/UTC";
 
+import fastifyApollo, {
+  fastifyApolloDrainPlugin,
+} from "@as-integrations/fastify";
+import { ApolloServer } from "@apollo/server";
+
 // Server
 const server = Fastify();
 // Apollo
@@ -37,7 +39,7 @@ const apollo = new ApolloServer<Context>({
 
 async function main() {
   // Database
-  await prisma.$connect();
+  // await prisma.$connect();
   logger.info(`Database connected`);
 
   //   // K8s
@@ -75,7 +77,7 @@ async function terminate(signal: NodeJS.Signals) {
   // Container
   await container.dispose();
   // Database
-  await prisma.$disconnect();
+  // await prisma.$disconnect();
   // Apollo
   await apollo.stop();
   // Server

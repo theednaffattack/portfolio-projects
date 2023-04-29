@@ -1,13 +1,13 @@
 import { InferModel } from "drizzle-orm";
 import { pgTable, uuid, foreignKey, timestamp } from "drizzle-orm/pg-core";
-import { permission } from "./permission";
-import { users } from "./user";
+import { permissionsTable } from "./permissions-table";
+import { usersTable } from "./users-table";
 
-export const usersPermissions = pgTable(
-  "user_permission",
+export const usersPermissionsTable = pgTable(
+  "users_permissions",
   {
-    permissionsId: uuid("permissions_id").references(() => permission.id),
-    usersId: uuid("users_id").references(() => users.id),
+    permissionsId: uuid("permissions_id").references(() => permissionsTable.id),
+    usersId: uuid("users_id").references(() => usersTable.id),
     createdAt: timestamp("created_at").defaultNow().notNull(),
     updatedAt: timestamp("updated_at").defaultNow().notNull(),
   },
@@ -15,14 +15,14 @@ export const usersPermissions = pgTable(
     return {
       permissionIdFk: foreignKey({
         columns: [userPermission.permissionsId],
-        foreignColumns: [permission.id],
+        foreignColumns: [permissionsTable.id],
       }),
       userIdFk: foreignKey({
         columns: [userPermission.usersId],
-        foreignColumns: [users.id],
+        foreignColumns: [usersTable.id],
       }),
     };
   }
 );
 
-export type UsersPermissionsModel = InferModel<typeof usersPermissions>;
+export type UsersPermissionsModel = InferModel<typeof usersPermissionsTable>;

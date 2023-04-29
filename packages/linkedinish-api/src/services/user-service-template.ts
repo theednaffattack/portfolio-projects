@@ -12,7 +12,7 @@ import { Pool } from "pg";
 
 import { RecipeType } from "../graphql/entities/recipe-type";
 import { createRecipeSamples } from "./recipe-samples";
-import { users } from "../graphql/models/user";
+import { usersTable } from "../graphql/models/users-table";
 
 const pool = new Pool({
   connectionString: "postgres://user:password@host:port/db",
@@ -24,7 +24,7 @@ export class UserService {
   private readonly items: RecipeType[] = createRecipeSamples();
   public create() {}
   public async findAll() {
-    const allUsers = await db.select().from(users);
+    const allUsers = await db.select().from(usersTable);
     return allUsers;
   }
   public remove() {}
@@ -32,7 +32,10 @@ export class UserService {
   public findUnique() {}
   public findUniqueOrThrow() {}
   public async removeById(id: string) {
-    const allUsers = await db.select().from(users).where(eq(users.id, id));
+    const allUsers = await db
+      .select()
+      .from(usersTable)
+      .where(eq(usersTable.id, id));
     return true;
   }
   public signIn() {}

@@ -1,3 +1,6 @@
+-- Specify Database to use
+USE linkedinish_api_dev;
+
 -- Users table
 CREATE TABLE IF NOT EXISTS users
 (

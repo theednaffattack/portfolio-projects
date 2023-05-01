@@ -21,7 +21,8 @@ import { schema } from "./graphql/schema";
 import { context } from "./helpers/context";
 import { formatError } from "./helpers/format-error";
 import { logger } from "./logger";
-import { Context } from "./types";
+import { ContextType } from "./types/all";
+import { pool } from "./pg-pool";
 
 // Set timezone to UTC
 process.env.TZ = "Etc/UTC";
@@ -29,21 +30,17 @@ process.env.TZ = "Etc/UTC";
 // Server
 const server = Fastify();
 // Apollo
-const apollo = new ApolloServer<Context>({
-  schema,
+const apollo = new ApolloServer<ContextType>({
   formatError,
   plugins: [fastifyApolloDrainPlugin(server)],
-});
-
-const pool = new Pool({
-  //   connectionString: "postgres://user:password@host:port/db",
-  connectionString: config.database.url,
+  schema,
 });
 
 async function main() {
   // Database
-  await pool.connect();
-  logger.info(`Database connected`);
+  const client = await pool.connect();
+
+  logger.info("Database connected");
 
   // Apollo
   await apollo.start();
@@ -66,7 +63,7 @@ async function main() {
     port: config.server.port,
     host: config.server.host,
   });
-  logger.info(`Server started at ${url}`);
+  logger.info(`Server started at ${url}/${config.graphql.path}`);
 }
 
 async function terminate(signal: NodeJS.Signals) {

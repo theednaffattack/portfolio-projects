@@ -7,3 +7,5 @@
 [User Permissions](https://stackoverflow.com/a/10311479)
 
 [RBAC strategies - blog](https://axellarsson.com/blog/rbac-and-nodejs/)
+
+[Migration Tool](https://github.com/amacneil/dbmate)

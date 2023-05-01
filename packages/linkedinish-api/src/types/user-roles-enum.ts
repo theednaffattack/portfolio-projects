@@ -1,13 +1,10 @@
-export enum UserRoles {
+import { registerEnumType } from "type-graphql";
+
+export enum UserRolesEnum {
   ADMIN = "ADMIN",
   USER = "USER",
   GUEST = "GUEST",
   SIMPLE = "SIMPLE",
-}
-
-export enum UserRoleEnum {
-  USER = "USER",
-  ADMIN = "ADMIN",
 }
 
 export enum UserPermissionsEnum {
@@ -16,3 +13,13 @@ export enum UserPermissionsEnum {
   UPDATE = "UPDATE",
   DELETE = "DELETE",
 }
+
+registerEnumType(UserRolesEnum, {
+  name: "UserRolesEnum", // this one is mandatory
+  description: "The different User roles for the app.", // this one is optional
+});
+
+registerEnumType(UserPermissionsEnum, {
+  name: "UserPermissionsEnum",
+  description: "The different User permissions for the app.",
+});

@@ -1,7 +1,4 @@
-// import type { User as PrismaUser, Prisma } from "@prisma/client";
-// import { prisma } from "~/db";
 import { inject, injectable } from "tsyringe";
-// import type { CreateUserInput, UpdateUserInput, WithRequired } from "../types";
 import { logger } from "../logger";
 import { AuthenticationError } from "../errors/authentication-error";
 import { TokenService } from "./token-service";

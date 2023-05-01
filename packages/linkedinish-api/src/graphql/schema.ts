@@ -1,16 +1,18 @@
-import { GraphQLSchema } from "graphql";
-import { buildSchemaSync } from "type-graphql";
 import { mergeSchemas } from "@graphql-tools/schema";
+import { GraphQLSchema } from "graphql";
 import { container } from "tsyringe";
-import { RecipeResolver } from "./resolvers/all";
+import { buildSchemaSync } from "type-graphql";
+import { authChecker } from "./auth-checker";
 import { authDirective } from "./directives/auth-directive";
+import { UserResolver } from "./resolvers/user";
 
 // Directives
 const directives = [authDirective] as const;
 
 const schemaSimple = buildSchemaSync({
-  resolvers: [RecipeResolver],
+  resolvers: [UserResolver],
   container: { get: (cls) => container.resolve(cls) },
+  authChecker,
   // FIXME forbidUnknownValues must be set to true
   validate: { forbidUnknownValues: false },
 });

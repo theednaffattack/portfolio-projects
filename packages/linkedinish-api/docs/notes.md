@@ -9,3 +9,9 @@
 [RBAC strategies - blog](https://axellarsson.com/blog/rbac-and-nodejs/)
 
 [Migration Tool](https://github.com/amacneil/dbmate)
+
+[Zapatos User Guid](https://jawj.github.io/zapatos/#user-guide)
+
+[Docker Initialization](https://stackoverflow.com/a/26599273)
+
+[Docker Initialization Too](https://stackoverflow.com/a/58346223)

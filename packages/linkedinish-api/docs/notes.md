@@ -10,7 +10,9 @@
 
 [Migration Tool](https://github.com/amacneil/dbmate)
 
-[Zapatos User Guid](https://jawj.github.io/zapatos/#user-guide)
+[Zapatos User Guide](https://jawj.github.io/zapatos/#user-guide)
+
+[Zapatos Deep Dive - blog](https://medium.com/nerd-for-tech/running-home-on-typescript-and-postgres-with-zapatos-48efd7011887)
 
 [Docker Initialization](https://stackoverflow.com/a/26599273)
 

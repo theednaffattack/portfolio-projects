@@ -1,13 +1,13 @@
 import { container } from "tsyringe";
 import type { ApolloFastifyContextFunction } from "@as-integrations/fastify";
-import type { Context, TokenPayload } from "../types";
+import type { ContextType, TokenPayload } from "../types/all";
 import { TokenService } from "../services/token-service";
 import { AuthenticationError } from "../errors/authentication-error";
 
-export const context: ApolloFastifyContextFunction<Context> = async ({
+export const context: ApolloFastifyContextFunction<ContextType> = async ({
   ip,
   headers,
-}): Promise<Context> => {
+}): Promise<ContextType> => {
   let applicant: TokenPayload | undefined;
   const authorizationHeader =
     headers && "Authorization" in headers ? "Authorization" : "authorization";

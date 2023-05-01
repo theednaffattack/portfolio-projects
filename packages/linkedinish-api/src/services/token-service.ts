@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import { config } from "../config";
 import { TokenError } from "../errors/token-error";
-import type { Token, TokenPayload } from "../types";
+import type { Token, TokenPayload } from "../types/all";
 
 export class TokenService {
   public static readonly SIGN_OPTIONS: jwt.SignOptions = {

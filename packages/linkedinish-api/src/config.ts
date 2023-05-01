@@ -2,7 +2,7 @@ import convert from "convert";
 import type pino from "pino";
 import { address } from "ip";
 
-import type { Config } from "./types";
+import type { Config } from "./types/all";
 import { env } from "./env";
 
 const ipAddress = address();

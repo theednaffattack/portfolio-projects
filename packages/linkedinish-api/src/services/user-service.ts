@@ -8,7 +8,7 @@ import { TokenService } from "./token-service";
 import { CryptoService } from "./crypto-service";
 import { usersTable } from "../graphql/models/users-table";
 import type { UsersModel, NewUsersModel } from "../graphql/models/users-table";
-import type { TokenTypes } from "../types";
+import type { TokenTypes } from "../types/all";
 import { db } from "../db";
 
 // type CreateArgs = Omit<Prisma.UserCreateArgs, "include" | "data"> & {
@@ -51,6 +51,27 @@ export class UserService {
     };
 
     await db.insert(usersTable).values(newUser);
+  }
+
+  public async findAll() {
+    return [
+      {
+        city: "Benicia",
+        country: "USA",
+        email: "fake@fake.com",
+        username: "Eddie_fake",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        city: "Benicia",
+        country: "USA",
+        email: "other@fake.com",
+        username: "Other_fake",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+    ];
   }
 
   public createOld(args: CreateArgs, prismaTxn?: Prisma.TransactionClient) {

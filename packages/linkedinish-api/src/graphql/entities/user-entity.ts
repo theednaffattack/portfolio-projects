@@ -1,7 +1,7 @@
 import { GraphQLID, GraphQLString } from "graphql";
 import { GraphQLTimestamp } from "graphql-scalars";
 import { Field, ObjectType } from "type-graphql";
-import { UserPermissionsEnum, UserRolesEnum } from "~/types";
+import { UserPermissionsEnum, UserRolesEnum } from "../../types/all";
 
 @ObjectType({ description: "User" })
 export class UserEntity {

@@ -2,7 +2,7 @@ import { Arg, Authorized, Mutation, Query, Resolver } from "type-graphql";
 
 import { inject, injectable } from "tsyringe";
 import { UserService } from "~/services/user-service";
-import { UserRolesEnum } from "../../types";
+import { UserRolesEnum } from "../../types/all";
 import { UserEntity } from "../entities/user-entity";
 
 @Resolver(UserEntity)

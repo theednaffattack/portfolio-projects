@@ -2,13 +2,13 @@ import type jwt from "jsonwebtoken";
 
 import type { TokenTypes } from "./token-types-enum";
 import { NodePermissionEnum, NodeRoleEnum } from "./node-permission-enum";
-import { UserPermissionsEnum, UserRoleEnum } from "~/types";
+import { UserPermissionsEnum, UserRolesEnum } from "./all";
 
 type ITokenPayload<T extends TokenTypes> = {
   type: T;
   id: string;
   roles: T extends TokenTypes.USER
-    ? UserRoleEnum[]
+    ? UserRolesEnum[]
     : T extends TokenTypes.NODE
     ? NodeRoleEnum[]
     : never;

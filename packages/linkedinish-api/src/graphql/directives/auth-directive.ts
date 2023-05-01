@@ -1,7 +1,12 @@
 import { GraphQLSchema, defaultFieldResolver } from "graphql";
 import { mapSchema, MapperKind, getDirective } from "@graphql-tools/utils";
 import { container } from "tsyringe";
-import type { AuthData, ClassType, Context, ResolverData } from "../../types";
+import type {
+  AuthData,
+  ClassType,
+  ContextType,
+  ResolverData,
+} from "../../types/all";
 import { AuthorizationError } from "../../errors/authorization-error";
 import { AuthenticationError } from "../../errors/authentication-error";
 
@@ -124,7 +129,7 @@ function buildAuthDirective<TContext = Record<string, unknown>>({
   };
 }
 
-const authFn: AuthFn<Context> = (
+const authFn: AuthFn<ContextType> = (
   { context: { applicant } },
   { type, roles, permissions }
 ) => {

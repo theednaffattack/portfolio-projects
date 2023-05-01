@@ -1,5 +1,5 @@
 import { createParamDecorator } from "type-graphql";
-import type { ContextType } from "~/types";
+import type { ContextType } from "../types/all";
 import type { TokenTypes } from "../types/token-types-enum";
 import { AuthenticationError, AuthorizationError } from "../errors/all";
 

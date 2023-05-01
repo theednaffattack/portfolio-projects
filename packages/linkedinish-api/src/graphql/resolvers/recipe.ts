@@ -9,7 +9,7 @@ import {
 } from "type-graphql";
 
 import { RecipeType } from "../entities/recipe-type";
-import { UserRoles } from "../../types";
+import { UserRolesEnum } from "../../types/all";
 import { RecipeService } from "../../services/recipe-service";
 
 @Resolver(RecipeType)
@@ -23,9 +23,9 @@ export class RecipeResolver {
   }
 
   @Mutation()
-  @Authorized(UserRoles.ADMIN) // auth guard
-  removeRecipe(@Arg("id") id: string): boolean {
-    return this.recipeService.removeById(id);
+  @Authorized(UserRolesEnum.ADMIN) // auth guard
+  async removeRecipe(@Arg("id") id: string) {
+    return await this.recipeService.removeById(id);
   }
 
   @FieldResolver()

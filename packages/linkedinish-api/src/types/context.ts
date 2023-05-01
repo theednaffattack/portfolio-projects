@@ -24,7 +24,7 @@
 
 import type { TokenPayload } from "./token";
 
-export type Context = {
+export type ContextType = {
   ip: string;
   applicant?: TokenPayload;
 };

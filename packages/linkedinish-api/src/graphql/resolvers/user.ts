@@ -2,7 +2,7 @@ import { Arg, Authorized, Mutation, Query, Resolver } from "type-graphql";
 
 import { inject, injectable } from "tsyringe";
 import { UserService } from "~/services/user-service";
-import { UserRoles } from "../../types";
+import { UserRolesEnum } from "../../types";
 import { UserEntity } from "../entities/user-entity";
 
 @Resolver(UserEntity)
@@ -15,12 +15,12 @@ export class UserResolver {
   ) {}
 
   @Query((returns) => [UserEntity])
-  recipes() {
+  users() {
     return this.userService.findAll();
   }
 
   @Mutation()
-  @Authorized(UserRoles.ADMIN) // auth guard
+  @Authorized(UserRolesEnum.ADMIN) // auth guard
   removeUser(@Arg("id") id: string): boolean {
     return this.userService.removeById(id);
   }

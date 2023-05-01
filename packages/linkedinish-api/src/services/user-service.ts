@@ -1,12 +1,15 @@
-import type { User as PrismaUser, Prisma } from "@prisma/client";
+// import type { User as PrismaUser, Prisma } from "@prisma/client";
 // import { prisma } from "~/db";
 import { inject, injectable } from "tsyringe";
 // import type { CreateUserInput, UpdateUserInput, WithRequired } from "../types";
 import { logger } from "../logger";
 import { AuthenticationError } from "../errors/authentication-error";
 import { TokenService } from "./token-service";
-import { TokenTypes } from "../types";
 import { CryptoService } from "./crypto-service";
+import { usersTable } from "../graphql/models/users-table";
+import type { UsersModel, NewUsersModel } from "../graphql/models/users-table";
+import type { TokenTypes } from "../types";
+import { db } from "../db";
 
 // type CreateArgs = Omit<Prisma.UserCreateArgs, "include" | "data"> & {
 //   data: CreateUserInput;
@@ -27,6 +30,9 @@ import { CryptoService } from "./crypto-service";
 
 // type SignInArgs = Required<Pick<PrismaUser, "username" | "password">>;
 
+type CreateArgs = Omit<UsersModel, "id" | "createdAt" | "updatedAt">;
+type CustomUsersModel = Omit<NewUsersModel, "id">;
+
 @injectable()
 export class UserService {
   public constructor(
@@ -34,7 +40,20 @@ export class UserService {
     @inject(CryptoService) private readonly cryptoService: CryptoService
   ) {}
 
-  public create(args: CreateArgs, prismaTxn?: Prisma.TransactionClient) {
+  public async create(args: CreateArgs) {
+    const newUser: CustomUsersModel = {
+      city: "Benicia",
+      country: "USA",
+      email: "fake@fake.com",
+      username: "Eddie_fake",
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    };
+
+    await db.insert(usersTable).values(newUser);
+  }
+
+  public createOld(args: CreateArgs, prismaTxn?: Prisma.TransactionClient) {
     // eslint-disable-next-line @typescript-eslint/no-shadow
     const fn = async (prisma: Prisma.TransactionClient) => {
       logger.info(`User service create: ${JSON.stringify(args)}`);
@@ -55,11 +74,11 @@ export class UserService {
     return prismaTxn ? fn(prismaTxn) : prisma.$transaction(fn);
   }
 
-  public async findAll() {
+  public async findAllOld() {
     const allUsers = await db.select().from(users);
   }
 
-  public findMany(
+  public findManyOld(
     args: FindManyArgs,
     prismaTxn: Prisma.TransactionClient = prisma
   ) {
@@ -71,7 +90,7 @@ export class UserService {
     });
   }
 
-  public findUnique(
+  public findUniqueOld(
     args: FindUniqueArgs,
     prismaTxn: Prisma.TransactionClient = prisma
   ) {
@@ -80,7 +99,7 @@ export class UserService {
     return prismaTxn.user.findUnique(args);
   }
 
-  public findUniqueOrThrow(
+  public findUniqueOrThrowOld(
     args: FindUniqueOrThrowArgs,
     prismaTxn: Prisma.TransactionClient = prisma
   ) {
@@ -89,7 +108,7 @@ export class UserService {
     return prismaTxn.user.findUniqueOrThrow(args);
   }
 
-  public update(args: UpdateArgs, prismaTxn?: Prisma.TransactionClient) {
+  public updateOld(args: UpdateArgs, prismaTxn?: Prisma.TransactionClient) {
     // eslint-disable-next-line @typescript-eslint/no-shadow
     const fn = async (prisma: Prisma.TransactionClient) => {
       logger.info(`User service update: ${JSON.stringify(args)}`);
@@ -116,7 +135,7 @@ export class UserService {
     return true;
   }
 
-  public signIn(args: SignInArgs, prismaTxn?: Prisma.TransactionClient) {
+  public signInOld(args: SignInArgs, prismaTxn?: Prisma.TransactionClient) {
     // eslint-disable-next-line @typescript-eslint/no-shadow
     const fn = async (prisma: Prisma.TransactionClient) => {
       logger.info(`User service sign in: ${args.username}`);

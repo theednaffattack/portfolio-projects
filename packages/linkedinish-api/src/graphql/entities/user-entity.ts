@@ -1,7 +1,7 @@
 import { GraphQLID, GraphQLString } from "graphql";
 import { GraphQLTimestamp } from "graphql-scalars";
 import { Field, ObjectType } from "type-graphql";
-import { UserPermissionsEnum, UserRoleEnum } from "~/types";
+import { UserPermissionsEnum, UserRolesEnum } from "~/types";
 
 @ObjectType({ description: "User" })
 export class UserEntity {
@@ -11,8 +11,8 @@ export class UserEntity {
   @Field(() => GraphQLString, { description: "User username" })
   username!: string;
 
-  @Field(() => [UserRoleEnum], { description: "User roles" })
-  roles!: UserRoleEnum[];
+  @Field(() => [UserRolesEnum], { description: "User roles" })
+  roles!: UserRolesEnum[];
 
   @Field(() => [UserPermissionsEnum], { description: "User permissions" })
   permissions!: UserPermissionsEnum[];

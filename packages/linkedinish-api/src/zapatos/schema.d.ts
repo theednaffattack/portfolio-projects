@@ -21,27 +21,1171 @@ declare module 'zapatos/schema' {
   /* (none) */
 
   /* --- tables --- */
-  /* (none) */
+
+  /**
+   * **organizations**
+   * - Table in database
+   */
+  export namespace organizations {
+    export type Table = 'organizations';
+    export interface Selectable {
+      /**
+      * **organizations.id**
+      * - `uuid` in database
+      * - `NOT NULL`, default: `uuid_generate_v4()`
+      */
+      id: string;
+      /**
+      * **organizations.name**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      name: string;
+      /**
+      * **organizations.phone**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      phone: string;
+      /**
+      * **organizations.email**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      email: string;
+      /**
+      * **organizations.country**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      country: string;
+      /**
+      * **organizations.address**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      address: string;
+      /**
+      * **organizations.city**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      city: string;
+      /**
+      * **organizations.postal_code**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      postal_code: string;
+      /**
+      * **organizations.updated_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      updated_at: Date;
+      /**
+      * **organizations.created_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      created_at: Date;
+    }
+    export interface JSONSelectable {
+      /**
+      * **organizations.id**
+      * - `uuid` in database
+      * - `NOT NULL`, default: `uuid_generate_v4()`
+      */
+      id: string;
+      /**
+      * **organizations.name**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      name: string;
+      /**
+      * **organizations.phone**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      phone: string;
+      /**
+      * **organizations.email**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      email: string;
+      /**
+      * **organizations.country**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      country: string;
+      /**
+      * **organizations.address**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      address: string;
+      /**
+      * **organizations.city**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      city: string;
+      /**
+      * **organizations.postal_code**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      postal_code: string;
+      /**
+      * **organizations.updated_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      updated_at: db.TimestampString;
+      /**
+      * **organizations.created_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      created_at: db.TimestampString;
+    }
+    export interface Whereable {
+      /**
+      * **organizations.id**
+      * - `uuid` in database
+      * - `NOT NULL`, default: `uuid_generate_v4()`
+      */
+      id?: string | db.Parameter<string> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment | db.ParentColumn>;
+      /**
+      * **organizations.name**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      name?: string | db.Parameter<string> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment | db.ParentColumn>;
+      /**
+      * **organizations.phone**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      phone?: string | db.Parameter<string> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment | db.ParentColumn>;
+      /**
+      * **organizations.email**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      email?: string | db.Parameter<string> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment | db.ParentColumn>;
+      /**
+      * **organizations.country**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      country?: string | db.Parameter<string> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment | db.ParentColumn>;
+      /**
+      * **organizations.address**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      address?: string | db.Parameter<string> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment | db.ParentColumn>;
+      /**
+      * **organizations.city**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      city?: string | db.Parameter<string> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment | db.ParentColumn>;
+      /**
+      * **organizations.postal_code**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      postal_code?: string | db.Parameter<string> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment | db.ParentColumn>;
+      /**
+      * **organizations.updated_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      updated_at?: (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.SQLFragment | db.ParentColumn>;
+      /**
+      * **organizations.created_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      created_at?: (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.SQLFragment | db.ParentColumn>;
+    }
+    export interface Insertable {
+      /**
+      * **organizations.id**
+      * - `uuid` in database
+      * - `NOT NULL`, default: `uuid_generate_v4()`
+      */
+      id?: string | db.Parameter<string> | db.DefaultType | db.SQLFragment;
+      /**
+      * **organizations.name**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      name: string | db.Parameter<string> | db.SQLFragment;
+      /**
+      * **organizations.phone**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      phone: string | db.Parameter<string> | db.SQLFragment;
+      /**
+      * **organizations.email**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      email: string | db.Parameter<string> | db.SQLFragment;
+      /**
+      * **organizations.country**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      country: string | db.Parameter<string> | db.SQLFragment;
+      /**
+      * **organizations.address**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      address: string | db.Parameter<string> | db.SQLFragment;
+      /**
+      * **organizations.city**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      city: string | db.Parameter<string> | db.SQLFragment;
+      /**
+      * **organizations.postal_code**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      postal_code: string | db.Parameter<string> | db.SQLFragment;
+      /**
+      * **organizations.updated_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      updated_at?: (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.DefaultType | db.SQLFragment;
+      /**
+      * **organizations.created_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      created_at?: (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.DefaultType | db.SQLFragment;
+    }
+    export interface Updatable {
+      /**
+      * **organizations.id**
+      * - `uuid` in database
+      * - `NOT NULL`, default: `uuid_generate_v4()`
+      */
+      id?: string | db.Parameter<string> | db.DefaultType | db.SQLFragment | db.SQLFragment<any, string | db.Parameter<string> | db.DefaultType | db.SQLFragment>;
+      /**
+      * **organizations.name**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      name?: string | db.Parameter<string> | db.SQLFragment | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment>;
+      /**
+      * **organizations.phone**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      phone?: string | db.Parameter<string> | db.SQLFragment | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment>;
+      /**
+      * **organizations.email**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      email?: string | db.Parameter<string> | db.SQLFragment | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment>;
+      /**
+      * **organizations.country**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      country?: string | db.Parameter<string> | db.SQLFragment | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment>;
+      /**
+      * **organizations.address**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      address?: string | db.Parameter<string> | db.SQLFragment | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment>;
+      /**
+      * **organizations.city**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      city?: string | db.Parameter<string> | db.SQLFragment | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment>;
+      /**
+      * **organizations.postal_code**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      postal_code?: string | db.Parameter<string> | db.SQLFragment | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment>;
+      /**
+      * **organizations.updated_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      updated_at?: (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.DefaultType | db.SQLFragment | db.SQLFragment<any, (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.DefaultType | db.SQLFragment>;
+      /**
+      * **organizations.created_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      created_at?: (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.DefaultType | db.SQLFragment | db.SQLFragment<any, (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.DefaultType | db.SQLFragment>;
+    }
+    export type UniqueIndex = 'pk_organizations';
+    export type Column = keyof Selectable;
+    export type OnlyCols<T extends readonly Column[]> = Pick<Selectable, T[number]>;
+    export type SQLExpression = Table | db.ColumnNames<Updatable | (keyof Updatable)[]> | db.ColumnValues<Updatable> | Whereable | Column | db.ParentColumn | db.GenericSQLExpression;
+    export type SQL = SQLExpression | SQLExpression[];
+  }
+
+  /**
+   * **permissions**
+   * - Table in database
+   */
+  export namespace permissions {
+    export type Table = 'permissions';
+    export interface Selectable {
+      /**
+      * **permissions.id**
+      * - `uuid` in database
+      * - `NOT NULL`, default: `uuid_generate_v4()`
+      */
+      id: string;
+      /**
+      * **permissions.permission_name**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      permission_name: string;
+      /**
+      * **permissions.created_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      created_at: Date;
+    }
+    export interface JSONSelectable {
+      /**
+      * **permissions.id**
+      * - `uuid` in database
+      * - `NOT NULL`, default: `uuid_generate_v4()`
+      */
+      id: string;
+      /**
+      * **permissions.permission_name**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      permission_name: string;
+      /**
+      * **permissions.created_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      created_at: db.TimestampString;
+    }
+    export interface Whereable {
+      /**
+      * **permissions.id**
+      * - `uuid` in database
+      * - `NOT NULL`, default: `uuid_generate_v4()`
+      */
+      id?: string | db.Parameter<string> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment | db.ParentColumn>;
+      /**
+      * **permissions.permission_name**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      permission_name?: string | db.Parameter<string> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment | db.ParentColumn>;
+      /**
+      * **permissions.created_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      created_at?: (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.SQLFragment | db.ParentColumn>;
+    }
+    export interface Insertable {
+      /**
+      * **permissions.id**
+      * - `uuid` in database
+      * - `NOT NULL`, default: `uuid_generate_v4()`
+      */
+      id?: string | db.Parameter<string> | db.DefaultType | db.SQLFragment;
+      /**
+      * **permissions.permission_name**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      permission_name: string | db.Parameter<string> | db.SQLFragment;
+      /**
+      * **permissions.created_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      created_at?: (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.DefaultType | db.SQLFragment;
+    }
+    export interface Updatable {
+      /**
+      * **permissions.id**
+      * - `uuid` in database
+      * - `NOT NULL`, default: `uuid_generate_v4()`
+      */
+      id?: string | db.Parameter<string> | db.DefaultType | db.SQLFragment | db.SQLFragment<any, string | db.Parameter<string> | db.DefaultType | db.SQLFragment>;
+      /**
+      * **permissions.permission_name**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      permission_name?: string | db.Parameter<string> | db.SQLFragment | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment>;
+      /**
+      * **permissions.created_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      created_at?: (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.DefaultType | db.SQLFragment | db.SQLFragment<any, (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.DefaultType | db.SQLFragment>;
+    }
+    export type UniqueIndex = 'pk_permissions' | 'uq_permissions_name';
+    export type Column = keyof Selectable;
+    export type OnlyCols<T extends readonly Column[]> = Pick<Selectable, T[number]>;
+    export type SQLExpression = Table | db.ColumnNames<Updatable | (keyof Updatable)[]> | db.ColumnValues<Updatable> | Whereable | Column | db.ParentColumn | db.GenericSQLExpression;
+    export type SQL = SQLExpression | SQLExpression[];
+  }
+
+  /**
+   * **roles**
+   * - Table in database
+   */
+  export namespace roles {
+    export type Table = 'roles';
+    export interface Selectable {
+      /**
+      * **roles.id**
+      * - `uuid` in database
+      * - `NOT NULL`, default: `uuid_generate_v4()`
+      */
+      id: string;
+      /**
+      * **roles.role_name**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      role_name: string;
+      /**
+      * **roles.updated_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      updated_at: Date;
+      /**
+      * **roles.created_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      created_at: Date;
+    }
+    export interface JSONSelectable {
+      /**
+      * **roles.id**
+      * - `uuid` in database
+      * - `NOT NULL`, default: `uuid_generate_v4()`
+      */
+      id: string;
+      /**
+      * **roles.role_name**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      role_name: string;
+      /**
+      * **roles.updated_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      updated_at: db.TimestampString;
+      /**
+      * **roles.created_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      created_at: db.TimestampString;
+    }
+    export interface Whereable {
+      /**
+      * **roles.id**
+      * - `uuid` in database
+      * - `NOT NULL`, default: `uuid_generate_v4()`
+      */
+      id?: string | db.Parameter<string> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment | db.ParentColumn>;
+      /**
+      * **roles.role_name**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      role_name?: string | db.Parameter<string> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment | db.ParentColumn>;
+      /**
+      * **roles.updated_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      updated_at?: (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.SQLFragment | db.ParentColumn>;
+      /**
+      * **roles.created_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      created_at?: (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.SQLFragment | db.ParentColumn>;
+    }
+    export interface Insertable {
+      /**
+      * **roles.id**
+      * - `uuid` in database
+      * - `NOT NULL`, default: `uuid_generate_v4()`
+      */
+      id?: string | db.Parameter<string> | db.DefaultType | db.SQLFragment;
+      /**
+      * **roles.role_name**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      role_name: string | db.Parameter<string> | db.SQLFragment;
+      /**
+      * **roles.updated_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      updated_at?: (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.DefaultType | db.SQLFragment;
+      /**
+      * **roles.created_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      created_at?: (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.DefaultType | db.SQLFragment;
+    }
+    export interface Updatable {
+      /**
+      * **roles.id**
+      * - `uuid` in database
+      * - `NOT NULL`, default: `uuid_generate_v4()`
+      */
+      id?: string | db.Parameter<string> | db.DefaultType | db.SQLFragment | db.SQLFragment<any, string | db.Parameter<string> | db.DefaultType | db.SQLFragment>;
+      /**
+      * **roles.role_name**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      role_name?: string | db.Parameter<string> | db.SQLFragment | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment>;
+      /**
+      * **roles.updated_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      updated_at?: (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.DefaultType | db.SQLFragment | db.SQLFragment<any, (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.DefaultType | db.SQLFragment>;
+      /**
+      * **roles.created_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      created_at?: (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.DefaultType | db.SQLFragment | db.SQLFragment<any, (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.DefaultType | db.SQLFragment>;
+    }
+    export type UniqueIndex = 'pk_roles' | 'uq_roles_name';
+    export type Column = keyof Selectable;
+    export type OnlyCols<T extends readonly Column[]> = Pick<Selectable, T[number]>;
+    export type SQLExpression = Table | db.ColumnNames<Updatable | (keyof Updatable)[]> | db.ColumnValues<Updatable> | Whereable | Column | db.ParentColumn | db.GenericSQLExpression;
+    export type SQL = SQLExpression | SQLExpression[];
+  }
+
+  /**
+   * **roles_permissions**
+   * - Table in database
+   */
+  export namespace roles_permissions {
+    export type Table = 'roles_permissions';
+    export interface Selectable {
+      /**
+      * **roles_permissions.role_id**
+      * - `uuid` in database
+      * - `NOT NULL`, no default
+      */
+      role_id: string;
+      /**
+      * **roles_permissions.permission_id**
+      * - `uuid` in database
+      * - `NOT NULL`, no default
+      */
+      permission_id: string;
+      /**
+      * **roles_permissions.updated_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      updated_at: Date;
+      /**
+      * **roles_permissions.created_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      created_at: Date;
+    }
+    export interface JSONSelectable {
+      /**
+      * **roles_permissions.role_id**
+      * - `uuid` in database
+      * - `NOT NULL`, no default
+      */
+      role_id: string;
+      /**
+      * **roles_permissions.permission_id**
+      * - `uuid` in database
+      * - `NOT NULL`, no default
+      */
+      permission_id: string;
+      /**
+      * **roles_permissions.updated_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      updated_at: db.TimestampString;
+      /**
+      * **roles_permissions.created_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      created_at: db.TimestampString;
+    }
+    export interface Whereable {
+      /**
+      * **roles_permissions.role_id**
+      * - `uuid` in database
+      * - `NOT NULL`, no default
+      */
+      role_id?: string | db.Parameter<string> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment | db.ParentColumn>;
+      /**
+      * **roles_permissions.permission_id**
+      * - `uuid` in database
+      * - `NOT NULL`, no default
+      */
+      permission_id?: string | db.Parameter<string> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment | db.ParentColumn>;
+      /**
+      * **roles_permissions.updated_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      updated_at?: (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.SQLFragment | db.ParentColumn>;
+      /**
+      * **roles_permissions.created_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      created_at?: (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.SQLFragment | db.ParentColumn>;
+    }
+    export interface Insertable {
+      /**
+      * **roles_permissions.role_id**
+      * - `uuid` in database
+      * - `NOT NULL`, no default
+      */
+      role_id: string | db.Parameter<string> | db.SQLFragment;
+      /**
+      * **roles_permissions.permission_id**
+      * - `uuid` in database
+      * - `NOT NULL`, no default
+      */
+      permission_id: string | db.Parameter<string> | db.SQLFragment;
+      /**
+      * **roles_permissions.updated_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      updated_at?: (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.DefaultType | db.SQLFragment;
+      /**
+      * **roles_permissions.created_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      created_at?: (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.DefaultType | db.SQLFragment;
+    }
+    export interface Updatable {
+      /**
+      * **roles_permissions.role_id**
+      * - `uuid` in database
+      * - `NOT NULL`, no default
+      */
+      role_id?: string | db.Parameter<string> | db.SQLFragment | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment>;
+      /**
+      * **roles_permissions.permission_id**
+      * - `uuid` in database
+      * - `NOT NULL`, no default
+      */
+      permission_id?: string | db.Parameter<string> | db.SQLFragment | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment>;
+      /**
+      * **roles_permissions.updated_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      updated_at?: (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.DefaultType | db.SQLFragment | db.SQLFragment<any, (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.DefaultType | db.SQLFragment>;
+      /**
+      * **roles_permissions.created_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      created_at?: (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.DefaultType | db.SQLFragment | db.SQLFragment<any, (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.DefaultType | db.SQLFragment>;
+    }
+    export type UniqueIndex = 'pk_role_permissions';
+    export type Column = keyof Selectable;
+    export type OnlyCols<T extends readonly Column[]> = Pick<Selectable, T[number]>;
+    export type SQLExpression = Table | db.ColumnNames<Updatable | (keyof Updatable)[]> | db.ColumnValues<Updatable> | Whereable | Column | db.ParentColumn | db.GenericSQLExpression;
+    export type SQL = SQLExpression | SQLExpression[];
+  }
+
+  /**
+   * **users**
+   * - Table in database
+   */
+  export namespace users {
+    export type Table = 'users';
+    export interface Selectable {
+      /**
+      * **users.id**
+      * - `uuid` in database
+      * - `NOT NULL`, default: `uuid_generate_v4()`
+      */
+      id: string;
+      /**
+      * **users.email**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      email: string;
+      /**
+      * **users.password**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      password: string;
+      /**
+      * **users.username**
+      * - `varchar` in database
+      * - Nullable, no default
+      */
+      username: string | null;
+      /**
+      * **users.updated_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      updated_at: Date;
+      /**
+      * **users.created_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      created_at: Date;
+    }
+    export interface JSONSelectable {
+      /**
+      * **users.id**
+      * - `uuid` in database
+      * - `NOT NULL`, default: `uuid_generate_v4()`
+      */
+      id: string;
+      /**
+      * **users.email**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      email: string;
+      /**
+      * **users.password**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      password: string;
+      /**
+      * **users.username**
+      * - `varchar` in database
+      * - Nullable, no default
+      */
+      username: string | null;
+      /**
+      * **users.updated_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      updated_at: db.TimestampString;
+      /**
+      * **users.created_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      created_at: db.TimestampString;
+    }
+    export interface Whereable {
+      /**
+      * **users.id**
+      * - `uuid` in database
+      * - `NOT NULL`, default: `uuid_generate_v4()`
+      */
+      id?: string | db.Parameter<string> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment | db.ParentColumn>;
+      /**
+      * **users.email**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      email?: string | db.Parameter<string> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment | db.ParentColumn>;
+      /**
+      * **users.password**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      password?: string | db.Parameter<string> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment | db.ParentColumn>;
+      /**
+      * **users.username**
+      * - `varchar` in database
+      * - Nullable, no default
+      */
+      username?: string | db.Parameter<string> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment | db.ParentColumn>;
+      /**
+      * **users.updated_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      updated_at?: (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.SQLFragment | db.ParentColumn>;
+      /**
+      * **users.created_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      created_at?: (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.SQLFragment | db.ParentColumn>;
+    }
+    export interface Insertable {
+      /**
+      * **users.id**
+      * - `uuid` in database
+      * - `NOT NULL`, default: `uuid_generate_v4()`
+      */
+      id?: string | db.Parameter<string> | db.DefaultType | db.SQLFragment;
+      /**
+      * **users.email**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      email: string | db.Parameter<string> | db.SQLFragment;
+      /**
+      * **users.password**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      password: string | db.Parameter<string> | db.SQLFragment;
+      /**
+      * **users.username**
+      * - `varchar` in database
+      * - Nullable, no default
+      */
+      username?: string | db.Parameter<string> | null | db.DefaultType | db.SQLFragment;
+      /**
+      * **users.updated_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      updated_at?: (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.DefaultType | db.SQLFragment;
+      /**
+      * **users.created_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      created_at?: (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.DefaultType | db.SQLFragment;
+    }
+    export interface Updatable {
+      /**
+      * **users.id**
+      * - `uuid` in database
+      * - `NOT NULL`, default: `uuid_generate_v4()`
+      */
+      id?: string | db.Parameter<string> | db.DefaultType | db.SQLFragment | db.SQLFragment<any, string | db.Parameter<string> | db.DefaultType | db.SQLFragment>;
+      /**
+      * **users.email**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      email?: string | db.Parameter<string> | db.SQLFragment | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment>;
+      /**
+      * **users.password**
+      * - `varchar` in database
+      * - `NOT NULL`, no default
+      */
+      password?: string | db.Parameter<string> | db.SQLFragment | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment>;
+      /**
+      * **users.username**
+      * - `varchar` in database
+      * - Nullable, no default
+      */
+      username?: string | db.Parameter<string> | null | db.DefaultType | db.SQLFragment | db.SQLFragment<any, string | db.Parameter<string> | null | db.DefaultType | db.SQLFragment>;
+      /**
+      * **users.updated_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      updated_at?: (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.DefaultType | db.SQLFragment | db.SQLFragment<any, (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.DefaultType | db.SQLFragment>;
+      /**
+      * **users.created_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      created_at?: (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.DefaultType | db.SQLFragment | db.SQLFragment<any, (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.DefaultType | db.SQLFragment>;
+    }
+    export type UniqueIndex = 'pk_users' | 'uq_users_email';
+    export type Column = keyof Selectable;
+    export type OnlyCols<T extends readonly Column[]> = Pick<Selectable, T[number]>;
+    export type SQLExpression = Table | db.ColumnNames<Updatable | (keyof Updatable)[]> | db.ColumnValues<Updatable> | Whereable | Column | db.ParentColumn | db.GenericSQLExpression;
+    export type SQL = SQLExpression | SQLExpression[];
+  }
+
+  /**
+   * **users_roles**
+   * - Table in database
+   */
+  export namespace users_roles {
+    export type Table = 'users_roles';
+    export interface Selectable {
+      /**
+      * **users_roles.user_id**
+      * - `uuid` in database
+      * - `NOT NULL`, no default
+      */
+      user_id: string;
+      /**
+      * **users_roles.role_id**
+      * - `uuid` in database
+      * - `NOT NULL`, no default
+      */
+      role_id: string;
+      /**
+      * **users_roles.organization_id**
+      * - `uuid` in database
+      * - `NOT NULL`, no default
+      */
+      organization_id: string;
+      /**
+      * **users_roles.created_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      created_at: Date;
+    }
+    export interface JSONSelectable {
+      /**
+      * **users_roles.user_id**
+      * - `uuid` in database
+      * - `NOT NULL`, no default
+      */
+      user_id: string;
+      /**
+      * **users_roles.role_id**
+      * - `uuid` in database
+      * - `NOT NULL`, no default
+      */
+      role_id: string;
+      /**
+      * **users_roles.organization_id**
+      * - `uuid` in database
+      * - `NOT NULL`, no default
+      */
+      organization_id: string;
+      /**
+      * **users_roles.created_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      created_at: db.TimestampString;
+    }
+    export interface Whereable {
+      /**
+      * **users_roles.user_id**
+      * - `uuid` in database
+      * - `NOT NULL`, no default
+      */
+      user_id?: string | db.Parameter<string> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment | db.ParentColumn>;
+      /**
+      * **users_roles.role_id**
+      * - `uuid` in database
+      * - `NOT NULL`, no default
+      */
+      role_id?: string | db.Parameter<string> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment | db.ParentColumn>;
+      /**
+      * **users_roles.organization_id**
+      * - `uuid` in database
+      * - `NOT NULL`, no default
+      */
+      organization_id?: string | db.Parameter<string> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment | db.ParentColumn>;
+      /**
+      * **users_roles.created_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      created_at?: (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.SQLFragment | db.ParentColumn>;
+    }
+    export interface Insertable {
+      /**
+      * **users_roles.user_id**
+      * - `uuid` in database
+      * - `NOT NULL`, no default
+      */
+      user_id: string | db.Parameter<string> | db.SQLFragment;
+      /**
+      * **users_roles.role_id**
+      * - `uuid` in database
+      * - `NOT NULL`, no default
+      */
+      role_id: string | db.Parameter<string> | db.SQLFragment;
+      /**
+      * **users_roles.organization_id**
+      * - `uuid` in database
+      * - `NOT NULL`, no default
+      */
+      organization_id: string | db.Parameter<string> | db.SQLFragment;
+      /**
+      * **users_roles.created_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      created_at?: (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.DefaultType | db.SQLFragment;
+    }
+    export interface Updatable {
+      /**
+      * **users_roles.user_id**
+      * - `uuid` in database
+      * - `NOT NULL`, no default
+      */
+      user_id?: string | db.Parameter<string> | db.SQLFragment | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment>;
+      /**
+      * **users_roles.role_id**
+      * - `uuid` in database
+      * - `NOT NULL`, no default
+      */
+      role_id?: string | db.Parameter<string> | db.SQLFragment | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment>;
+      /**
+      * **users_roles.organization_id**
+      * - `uuid` in database
+      * - `NOT NULL`, no default
+      */
+      organization_id?: string | db.Parameter<string> | db.SQLFragment | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment>;
+      /**
+      * **users_roles.created_at**
+      * - `timestamp` in database
+      * - `NOT NULL`, default: `CURRENT_TIMESTAMP`
+      */
+      created_at?: (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.DefaultType | db.SQLFragment | db.SQLFragment<any, (db.TimestampString | Date) | db.Parameter<(db.TimestampString | Date)> | db.DefaultType | db.SQLFragment>;
+    }
+    export type UniqueIndex = 'pk_users_roles';
+    export type Column = keyof Selectable;
+    export type OnlyCols<T extends readonly Column[]> = Pick<Selectable, T[number]>;
+    export type SQLExpression = Table | db.ColumnNames<Updatable | (keyof Updatable)[]> | db.ColumnValues<Updatable> | Whereable | Column | db.ParentColumn | db.GenericSQLExpression;
+    export type SQL = SQLExpression | SQLExpression[];
+  }
+
+  /**
+   * **vw_user_organization_permissions**
+   * - View in database
+   */
+  export namespace vw_user_organization_permissions {
+    export type Table = 'vw_user_organization_permissions';
+    export interface Selectable {
+      /**
+      * **vw_user_organization_permissions.user_id**
+      * - `uuid` in database
+      * - Nullable, no default
+      */
+      user_id: string | null;
+      /**
+      * **vw_user_organization_permissions.organization_id**
+      * - `uuid` in database
+      * - Nullable, no default
+      */
+      organization_id: string | null;
+      /**
+      * **vw_user_organization_permissions.permission_name**
+      * - `varchar` in database
+      * - Nullable, no default
+      */
+      permission_name: string | null;
+    }
+    export interface JSONSelectable {
+      /**
+      * **vw_user_organization_permissions.user_id**
+      * - `uuid` in database
+      * - Nullable, no default
+      */
+      user_id: string | null;
+      /**
+      * **vw_user_organization_permissions.organization_id**
+      * - `uuid` in database
+      * - Nullable, no default
+      */
+      organization_id: string | null;
+      /**
+      * **vw_user_organization_permissions.permission_name**
+      * - `varchar` in database
+      * - Nullable, no default
+      */
+      permission_name: string | null;
+    }
+    export interface Whereable {
+      /**
+      * **vw_user_organization_permissions.user_id**
+      * - `uuid` in database
+      * - Nullable, no default
+      */
+      user_id?: string | db.Parameter<string> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment | db.ParentColumn>;
+      /**
+      * **vw_user_organization_permissions.organization_id**
+      * - `uuid` in database
+      * - Nullable, no default
+      */
+      organization_id?: string | db.Parameter<string> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment | db.ParentColumn>;
+      /**
+      * **vw_user_organization_permissions.permission_name**
+      * - `varchar` in database
+      * - Nullable, no default
+      */
+      permission_name?: string | db.Parameter<string> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment | db.ParentColumn>;
+    }
+    export interface Insertable {
+      [key: string]: never;
+    }
+    export interface Updatable {
+      [key: string]: never;
+    }
+    export type UniqueIndex = never;
+    export type Column = keyof Selectable;
+    export type OnlyCols<T extends readonly Column[]> = Pick<Selectable, T[number]>;
+    export type SQLExpression = Table | db.ColumnNames<Updatable | (keyof Updatable)[]> | db.ColumnValues<Updatable> | Whereable | Column | db.ParentColumn | db.GenericSQLExpression;
+    export type SQL = SQLExpression | SQLExpression[];
+  }
 
   /* --- aggregate types --- */
 
   export namespace public {  
-    // `never` rather than `any` types would be more accurate in this no-tables case, but they stop `shortcuts.ts` compiling
+    export type Table = organizations.Table | permissions.Table | roles.Table | roles_permissions.Table | users.Table | users_roles.Table | vw_user_organization_permissions.Table;
+    export type Selectable = organizations.Selectable | permissions.Selectable | roles.Selectable | roles_permissions.Selectable | users.Selectable | users_roles.Selectable | vw_user_organization_permissions.Selectable;
+    export type JSONSelectable = organizations.JSONSelectable | permissions.JSONSelectable | roles.JSONSelectable | roles_permissions.JSONSelectable | users.JSONSelectable | users_roles.JSONSelectable | vw_user_organization_permissions.JSONSelectable;
+    export type Whereable = organizations.Whereable | permissions.Whereable | roles.Whereable | roles_permissions.Whereable | users.Whereable | users_roles.Whereable | vw_user_organization_permissions.Whereable;
+    export type Insertable = organizations.Insertable | permissions.Insertable | roles.Insertable | roles_permissions.Insertable | users.Insertable | users_roles.Insertable | vw_user_organization_permissions.Insertable;
+    export type Updatable = organizations.Updatable | permissions.Updatable | roles.Updatable | roles_permissions.Updatable | users.Updatable | users_roles.Updatable | vw_user_organization_permissions.Updatable;
+    export type UniqueIndex = organizations.UniqueIndex | permissions.UniqueIndex | roles.UniqueIndex | roles_permissions.UniqueIndex | users.UniqueIndex | users_roles.UniqueIndex | vw_user_organization_permissions.UniqueIndex;
+    export type Column = organizations.Column | permissions.Column | roles.Column | roles_permissions.Column | users.Column | users_roles.Column | vw_user_organization_permissions.Column;
   
-    export type Table = never;
-    export type Selectable = never;
-    export type JSONSelectable = never;
-    export type Whereable = never;
-    export type Insertable = never;
-    export type Updatable = never;
-    export type UniqueIndex = never;
-    export type Column = never;
-  
-    export type AllBaseTables = [];
+    export type AllBaseTables = [organizations.Table, permissions.Table, roles.Table, roles_permissions.Table, users.Table, users_roles.Table];
     export type AllForeignTables = [];
-    export type AllViews = [];
+    export type AllViews = [vw_user_organization_permissions.Table];
     export type AllMaterializedViews = [];
-    export type AllTablesAndViews = [];
+    export type AllTablesAndViews = [organizations.Table, permissions.Table, roles.Table, roles_permissions.Table, users.Table, users_roles.Table, vw_user_organization_permissions.Table];
   }
 
 
@@ -68,20 +1212,84 @@ declare module 'zapatos/schema' {
 
   /* === lookups === */
 
-  export type SelectableForTable<T extends Table> = any;
+  export type SelectableForTable<T extends Table> = {
+    "organizations": organizations.Selectable;
+    "permissions": permissions.Selectable;
+    "roles": roles.Selectable;
+    "roles_permissions": roles_permissions.Selectable;
+    "users": users.Selectable;
+    "users_roles": users_roles.Selectable;
+    "vw_user_organization_permissions": vw_user_organization_permissions.Selectable;
+  }[T];
 
-  export type JSONSelectableForTable<T extends Table> = any;
+  export type JSONSelectableForTable<T extends Table> = {
+    "organizations": organizations.JSONSelectable;
+    "permissions": permissions.JSONSelectable;
+    "roles": roles.JSONSelectable;
+    "roles_permissions": roles_permissions.JSONSelectable;
+    "users": users.JSONSelectable;
+    "users_roles": users_roles.JSONSelectable;
+    "vw_user_organization_permissions": vw_user_organization_permissions.JSONSelectable;
+  }[T];
 
-  export type WhereableForTable<T extends Table> = any;
+  export type WhereableForTable<T extends Table> = {
+    "organizations": organizations.Whereable;
+    "permissions": permissions.Whereable;
+    "roles": roles.Whereable;
+    "roles_permissions": roles_permissions.Whereable;
+    "users": users.Whereable;
+    "users_roles": users_roles.Whereable;
+    "vw_user_organization_permissions": vw_user_organization_permissions.Whereable;
+  }[T];
 
-  export type InsertableForTable<T extends Table> = any;
+  export type InsertableForTable<T extends Table> = {
+    "organizations": organizations.Insertable;
+    "permissions": permissions.Insertable;
+    "roles": roles.Insertable;
+    "roles_permissions": roles_permissions.Insertable;
+    "users": users.Insertable;
+    "users_roles": users_roles.Insertable;
+    "vw_user_organization_permissions": vw_user_organization_permissions.Insertable;
+  }[T];
 
-  export type UpdatableForTable<T extends Table> = any;
+  export type UpdatableForTable<T extends Table> = {
+    "organizations": organizations.Updatable;
+    "permissions": permissions.Updatable;
+    "roles": roles.Updatable;
+    "roles_permissions": roles_permissions.Updatable;
+    "users": users.Updatable;
+    "users_roles": users_roles.Updatable;
+    "vw_user_organization_permissions": vw_user_organization_permissions.Updatable;
+  }[T];
 
-  export type UniqueIndexForTable<T extends Table> = any;
+  export type UniqueIndexForTable<T extends Table> = {
+    "organizations": organizations.UniqueIndex;
+    "permissions": permissions.UniqueIndex;
+    "roles": roles.UniqueIndex;
+    "roles_permissions": roles_permissions.UniqueIndex;
+    "users": users.UniqueIndex;
+    "users_roles": users_roles.UniqueIndex;
+    "vw_user_organization_permissions": vw_user_organization_permissions.UniqueIndex;
+  }[T];
 
-  export type ColumnForTable<T extends Table> = any;
+  export type ColumnForTable<T extends Table> = {
+    "organizations": organizations.Column;
+    "permissions": permissions.Column;
+    "roles": roles.Column;
+    "roles_permissions": roles_permissions.Column;
+    "users": users.Column;
+    "users_roles": users_roles.Column;
+    "vw_user_organization_permissions": vw_user_organization_permissions.Column;
+  }[T];
 
-  export type SQLForTable<T extends Table> = any;
+  export type SQLForTable<T extends Table> = {
+    "organizations": organizations.SQL;
+    "permissions": permissions.SQL;
+    "roles": roles.SQL;
+    "roles_permissions": roles_permissions.SQL;
+    "users": users.SQL;
+    "users_roles": users_roles.SQL;
+    "vw_user_organization_permissions": vw_user_organization_permissions.SQL;
+  }[T];
 
 }

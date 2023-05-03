@@ -1,5 +1,5 @@
--- Specify Database to use
-USE linkedinish_api_dev;
+-- Add extensions
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 -- Users table
 CREATE TABLE IF NOT EXISTS users

@@ -2,7 +2,7 @@ export * from "./auth-data";
 export * from "./class-type";
 export * from "./config";
 export * from "./context";
-export * from "./db";
+// export * from "./db";
 export * from "./node-permission-enum";
 export * from "./resolver-data";
 export * from "./token";

@@ -63,7 +63,7 @@ async function main() {
     port: config.server.port,
     host: config.server.host,
   });
-  logger.info(`Server started at ${url}/${config.graphql.path}`);
+  logger.info(`Server started at ${url}${config.graphql.path}`);
 }
 
 async function terminate(signal: NodeJS.Signals) {

@@ -772,9 +772,9 @@ declare module 'zapatos/schema' {
       /**
       * **users.username**
       * - `varchar` in database
-      * - Nullable, no default
+      * - `NOT NULL`, no default
       */
-      username: string | null;
+      username: string;
       /**
       * **users.updated_at**
       * - `timestamp` in database
@@ -810,9 +810,9 @@ declare module 'zapatos/schema' {
       /**
       * **users.username**
       * - `varchar` in database
-      * - Nullable, no default
+      * - `NOT NULL`, no default
       */
-      username: string | null;
+      username: string;
       /**
       * **users.updated_at**
       * - `timestamp` in database
@@ -848,7 +848,7 @@ declare module 'zapatos/schema' {
       /**
       * **users.username**
       * - `varchar` in database
-      * - Nullable, no default
+      * - `NOT NULL`, no default
       */
       username?: string | db.Parameter<string> | db.SQLFragment | db.ParentColumn | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment | db.ParentColumn>;
       /**
@@ -886,9 +886,9 @@ declare module 'zapatos/schema' {
       /**
       * **users.username**
       * - `varchar` in database
-      * - Nullable, no default
+      * - `NOT NULL`, no default
       */
-      username?: string | db.Parameter<string> | null | db.DefaultType | db.SQLFragment;
+      username: string | db.Parameter<string> | db.SQLFragment;
       /**
       * **users.updated_at**
       * - `timestamp` in database
@@ -924,9 +924,9 @@ declare module 'zapatos/schema' {
       /**
       * **users.username**
       * - `varchar` in database
-      * - Nullable, no default
+      * - `NOT NULL`, no default
       */
-      username?: string | db.Parameter<string> | null | db.DefaultType | db.SQLFragment | db.SQLFragment<any, string | db.Parameter<string> | null | db.DefaultType | db.SQLFragment>;
+      username?: string | db.Parameter<string> | db.SQLFragment | db.SQLFragment<any, string | db.Parameter<string> | db.SQLFragment>;
       /**
       * **users.updated_at**
       * - `timestamp` in database

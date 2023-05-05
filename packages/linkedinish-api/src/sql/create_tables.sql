@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS users
     id uuid NOT NULL DEFAULT uuid_generate_v4(),
     email character varying(320) NOT NULL,
     password character varying(255) NOT NULL,
-    username character varying(80) NULL NULL,
+    username character varying(80) NOT NULL,
     updated_at timestamp without time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
     created_at timestamp without time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT pk_users PRIMARY KEY (id),

@@ -1,10 +1,10 @@
 import { createParamDecorator } from "type-graphql";
 import type { ContextType } from "../types/all";
-import type { TokenTypes } from "../types/token-types-enum";
+import type { TokenTypesEnum } from "../types/token-types-enum";
 import { AuthenticationError, AuthorizationError } from "../errors/all";
 
 type ApplicantArgs = {
-  type?: TokenTypes;
+  type?: TokenTypesEnum;
 };
 
 export function Applicant(args?: ApplicantArgs): ParameterDecorator {

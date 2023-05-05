@@ -1,26 +1,26 @@
 import type jwt from "jsonwebtoken";
 
-import type { TokenTypes } from "./token-types-enum";
+import type { TokenTypesEnum } from "./token-types-enum";
 import { NodePermissionEnum, NodeRoleEnum } from "./node-permission-enum";
 import { UserPermissionsEnum, UserRolesEnum } from "./all";
 
-type ITokenPayload<T extends TokenTypes> = {
+type ITokenPayload<T extends TokenTypesEnum> = {
   type: T;
   id: string;
-  roles: T extends TokenTypes.USER
+  roles: T extends TokenTypesEnum.USER
     ? UserRolesEnum[]
-    : T extends TokenTypes.NODE
+    : T extends TokenTypesEnum.NODE
     ? NodeRoleEnum[]
     : never;
-  permissions: T extends TokenTypes.USER
+  permissions: T extends TokenTypesEnum.USER
     ? UserPermissionsEnum[]
-    : T extends TokenTypes.NODE
+    : T extends TokenTypesEnum.NODE
     ? NodePermissionEnum[]
     : never;
 };
 
-export type UserTokenPayload = ITokenPayload<TokenTypes.USER>;
-export type NodeTokenPayload = ITokenPayload<TokenTypes.NODE>;
+export type UserTokenPayload = ITokenPayload<TokenTypesEnum.USER>;
+export type NodeTokenPayload = ITokenPayload<TokenTypesEnum.NODE>;
 export type TokenPayload = UserTokenPayload | NodeTokenPayload;
 
 type IToken<T> = jwt.Jwt & { payload: T };

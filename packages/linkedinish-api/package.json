@@ -7,10 +7,11 @@
     "build": "npx tsc --build tsconfig.json",
     "build:clean": "npx tsc --build --clean tsconfig.json",
     "build:watch": "npx tsc --build --watch tsconfig.json",
+    "db:reset-local": "rimraf ./postgres-data",
     "start": "node build/main.js",
     "dev": "npx ts-node-dev --respawn --clear --rs --transpile-only --tree-kill --exit-child --require tsconfig-paths/register src/main.ts | npx pino-pretty --translateTime \"UTC:yyyy-mm-dd'T'HH:MM:ss'Z'\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "container:up": "docker-compose -f ./pg-database.compose.yaml up",
+    "container:up": "docker-compose -f ./pg-database.compose.yaml up -d",
     "container:down": "docker-compose -f ./pg-database.compose.yaml down",
     "zap": "DATABASE_URL='postgres://fake_db_user:fake_password@192.168.1.16:5438' npx zapatos"
   },

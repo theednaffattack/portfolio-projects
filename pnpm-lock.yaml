@@ -615,6 +615,9 @@ importers:
       prisma:
         specifier: ^4.10.0
         version: 4.10.0
+      rimraf:
+        specifier: ^4.4.1
+        version: 4.4.1
       ts-node:
         specifier: ^10.9.1
         version: 10.9.1(@types/node@18.15.10)(typescript@4.9.5)

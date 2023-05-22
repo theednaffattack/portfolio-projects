@@ -14,10 +14,8 @@ import healthCheck from "fastify-healthcheck";
 import { logger } from "./logger";
 import { context, formatError } from "./helpers";
 import { config } from "./config";
-// import { prisma } from "./db";
 import { createRecipeSamples } from "./recipe-samples";
 import { schema } from "./schema";
-// import { kubeconfig, NodeInformer } from "./k8s";
 import { Context } from "./types";
 
 // Set timezone to UTC

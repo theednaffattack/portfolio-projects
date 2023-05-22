@@ -13,7 +13,6 @@ import helmet from "@fastify/helmet";
 import rateLimit from "@fastify/rate-limit";
 import Fastify from "fastify";
 import healthCheck from "fastify-healthcheck";
-import { Pool } from "pg";
 import { container } from "tsyringe";
 
 import { config } from "./config";
@@ -72,7 +71,7 @@ async function terminate(signal: NodeJS.Signals) {
   // Container
   await container.dispose();
   // Database
-  //   await prisma.$disconnect();
+  await pool.end();
   // Apollo
   await apollo.stop();
   // Server

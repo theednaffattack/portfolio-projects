@@ -37,7 +37,7 @@ const apollo = new ApolloServer<ContextType>({
 
 async function main() {
   // Database
-  const client = await pool.connect();
+  const dbClient = await pool.connect();
 
   logger.info("Database connected");
 
